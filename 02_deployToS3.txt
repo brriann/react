@@ -37,6 +37,8 @@ CLOUDFRONT SETUP
 -create distribution, http -> https
 -alternate domain names: match Route 53 hosted zone
 -use custom certificate created in below step
+-use regional URL someBucketName.s3.us-west-2.amazonaws.com to preserve URL bar
+	
 
 AWS CERTIFICATE MANAGER
 -NoVa region for this step
