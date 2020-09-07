@@ -1,4 +1,9 @@
+React > S3 > CloudFront
+Certificate Manager > Route 53 DNS
+Route 53 DNS > CloudFront
+
 https://medium.com/@wolovim/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af
+https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081
 
 (create S3 bucket)
 -enable public access
@@ -26,3 +31,16 @@ set npm deploy to:
 
 npm run build
 npm run deploy
+
+
+CLOUDFRONT SETUP
+-create distribution, http -> https
+
+AWS CERTIFICATE MANAGER
+-NoVa region for this step
+for site.com, *.site.com
+
+ROUTE53 DNS SETUP
+-create A record to cloudfront distribution
+
+
