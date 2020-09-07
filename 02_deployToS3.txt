@@ -36,6 +36,7 @@ npm run deploy
 CLOUDFRONT SETUP
 -create distribution, http -> https
 -alternate domain names: match Route 53 hosted zone
+-use custom certificate created in below step
 
 AWS CERTIFICATE MANAGER
 -NoVa region for this step
