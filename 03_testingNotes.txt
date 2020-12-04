@@ -6,15 +6,20 @@ Test types
 -rendering component trees
 -end-to-end testing for app
 
-React Testing Library (replaces Enzyme)
+Tools
+
+1. React Testing Library (replaces Enzyme)
 https://testing-library.com/docs/react-testing-library/intro
 -tests DOM nodes rather than rendered React components
 
-Jest
+2. Jest
 -JS testing framework
 -expect(var).toBe(val)
 -uses snapshot testing to test that components are rendering as expected
 --pseudo-creates a component within test environment and turns it into a JSON tree
+
+3. jest-dom
+companion library for React Test Library that provides custom DOM element matchers for Jest
 
 ###
 ### https://medium.com/javascript-in-plain-english/testing-in-react-part-2-react-testing-library-f32432b93c6c
@@ -64,7 +69,66 @@ screen.debug(screen.getByText('submit')) (prints HTML to terminal)
 
 https://github.com/testing-library/dom-testing-library/blob/master/src/event-map.js
 
+fireEvent
 
+fireEvent[eventName](node: HTMLElement, eventProperties: Object)
 
+const rightClick = { button: 2 } 
+fireEvent.click(getByText('Submit'), rightClick)
+
+click, dblClick, drag, drop, mouseEnter, mouseLeave
+copy, cut, paste
+focus, blur, focusIn, focusOut
+change, input, invalid, submit, reset
+keyDown, keyPress, keyUp
+select
+scroll
+
+Async DOM utilities:
+
+waitFor
+waitForElementToBeRemoved
+
+###
+### https://medium.com/javascript-in-plain-english/testing-in-react-part-3-jest-jest-dom-7a8a03ae60b
+###
+
+React Testing Library - renders elements on which tests can be performed
+Jest - tests DOM nodes
+Jest-Dom - companion library for RTL that provides custom DOM element matchers for Jest
+-needed if Jest matchers aren't enough?
+
+# JEST
+
+configuration 
+https://jestjs.io/docs/en/next/configuration
+-package.json
+-jest.config.js (ts?)
+-  --config </some/path.js|json>
+
+Test suites
+describe(name, fn)
+
+Test cases
+test(name, fn, timeout)
+
+# Matchers
+.toBe()
+
+bool/truthy .toBeNull() .toBeDefined()
+numeric .toBeGreaterThan() .toBeCloseTo()
+string .toMatch()
+array .toContain()
+error handling .toThrow()
+
+jest matchers
+https://jestjs.io/docs/en/expect
+
+jest-dom matchers
+https://github.com/testing-library/jest-dom#custom-matchers
+
+jest-extended matchers
+https://github.com/jest-community/jest-extended
+https://www.npmjs.com/package/jest-extended
 
 
