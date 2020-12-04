@@ -201,4 +201,7 @@ describe('suite1', fn.. {
   beforeEach(fn)
 }
 
+# MOCKING
+https://jestjs.io/docs/en/mock-functions
+
 
