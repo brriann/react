@@ -18,7 +18,7 @@ https://testing-library.com/docs/react-testing-library/intro
 -uses snapshot testing to test that components are rendering as expected
 --pseudo-creates a component within test environment and turns it into a JSON tree
 
-3. jest-dom
+3. Jest-Dom
 companion library for React Test Library that provides custom DOM element matchers for Jest
 
 ###
