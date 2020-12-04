@@ -20,6 +20,50 @@ Jest
 ### https://medium.com/javascript-in-plain-english/testing-in-react-part-2-react-testing-library-f32432b93c6c
 ###
 
+strategy: test functionality, not implementation
+-(what does user see/interact with?)
+-query the DOM the same way the user would.  find form element by label text, etc.
+-or cheat and find elements by data-testid
+
+React Testing Library renders a React component and searches/queries for a DOM node
+Jest then can test a property of the queried Node (exists in DOM? has specified length?)
+
+# API QUERIES
+
+https://testing-library.com/docs/dom-testing-library/api-queries/
+
+get - go-to
+query - used to assert absence of element
+find - used for elemenents that appear asynchronously
+
+Available Variants:
+getBy
+getAllBy
+queryBy
+queryAllBy
+findBy
+findAllBy
+
+Available Queries:
+ByLabelText
+ByPlaceholderText
+ByText
+ByAltText
+ByTitle
+ByDisplayValue
+ByRole
+ByTestId
+
+Queries are called on a SCREEN object
+screen = document.body for the test environment
+
+screen.getByText('submit')
+screen.debug(screen.getByText('submit')) (prints HTML to terminal)
+
+# EVENTS
+
+https://github.com/testing-library/dom-testing-library/blob/master/src/event-map.js
+
 
 
 
