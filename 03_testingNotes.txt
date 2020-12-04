@@ -202,6 +202,9 @@ describe('suite1', fn.. {
 }
 
 # MOCKING
+functions
 https://jestjs.io/docs/en/mock-functions
 
+modules
+https://jestjs.io/docs/en/manual-mocks
 
