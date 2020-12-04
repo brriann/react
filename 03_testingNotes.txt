@@ -131,4 +131,74 @@ jest-extended matchers
 https://github.com/jest-community/jest-extended
 https://www.npmjs.com/package/jest-extended
 
+# ASYNC TESTING
+
+1. callbacks -  use done keyword
+
+test('the data is peanut butter', done => {
+  function callback(data) {     
+    try {       
+      expect(data).toBe('peanut butter');       
+      done();     
+    } catch (error) {       
+      done(error);     
+    }
+  }   
+  
+  fetchData(callback);
+});
+
+2. promises - Jest waits for promises to resolve (if a test encounters a returned promise)
+
+
+3. async/await - use async keyword, then try/catch and await
+
+test('the data is peanut butter', async () => {   
+  const data = await fetchData();   
+  expect(data).toBe('peanut butter'); 
+});  
+test('the fetch fails with an error', async () => {  
+  expect.assertions(1); 
+  try {     
+    await fetchData();   
+  } catch (e) {         
+    expect(e).toMatch('error');   
+  } 
+});
+
+# SNAPSHOTS
+https://jestjs.io/docs/en/snapshot-testing
+
+# SETUP/TEARDOWN
+https://jestjs.io/docs/en/setup-teardown
+
+beforeEach()
+afterEach()
+
+beforeEach(() => {
+  initializeCityDatabase();
+});
+
+beforeEach and afterEach can handle asynchronous code in the same ways that tests can handle asynchronous code 
+-they can either take a done parameter or return a promise.
+
+beforeEach(() => {
+  return initializeCityDatabase();
+});
+
+One-Time Setup
+
+beforeAll()
+afterAll()
+
+# scoping setup/teardown
+
+// before all tests
+beforeEach(fn)
+
+describe('suite1', fn.. {
+  // before suite1 tests
+  beforeEach(fn)
+}
+
 
