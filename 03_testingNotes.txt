@@ -208,3 +208,46 @@ https://jestjs.io/docs/en/mock-functions
 modules
 https://jestjs.io/docs/en/manual-mocks
 
+
+
+###
+### https://medium.com/javascript-in-plain-english/testing-in-react-part-4-enzyme-9b030ad616ae
+###
+
+Enzyme vs RTL
+-Enzyme can directly test state and the manipulation of state
+
+Enzyme rendering:
+-shallow rendering
+--test components as units
+
+-full DOM rendering
+--for components that interact with DOM API's
+
+-static rendering
+
+Enzyme API's
+-DOM traversal
+-state manipulation
+-assertions
+
+
+###
+### https://medium.com/javascript-in-plain-english/testing-in-react-part-5-end-to-end-testing-with-cypress-bd2bf8d3385f
+###
+
+Cypress - end-to-end / integration tests
+-integrates with browsers on host machine
+-visit URL's within tests. no mounting components
+-Cypress GUI App Preview window
+
+###
+### https://medium.com/javascript-in-plain-english/testing-in-react-part-6-real-world-testing-with-react-testing-library-jest-enzyme-and-cypress-9c73436d95d8
+###
+
+Classic RTL pattern, testing a component that is passed props:
+(import of Router from react-router-dom and inclusion of <Router> within render() is needed for <Link>'s...)
+
+render(<Button path={pathProp} text={textProp} />);
+const btn = screen.getByText(textProp);
+expect(btn.href).toContain(pathProp);
